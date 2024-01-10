@@ -1,0 +1,136 @@
+.product-card {
+  display: flex;
+  width: 600px;
+  border-radius: 10px;
+  animation: fade-bg-in calc(3 * var(--duration)) forwards;
+
+  .product-image {
+    border-radius: 10px 0 0 10px;
+    width: 300px;
+    height: 100%;
+    animation: from-left calc(2 * var(--duration)) forwards;
+
+    @media screen and (max-width: 650px) {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      animation: from-above calc(2 * var(--duration)) forwards;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+
+    .label {
+      color: var(--auro-metal);
+      animation: from-below calc(2 * var(--duration)) forwards;
+    }
+
+    .product-name {
+      color: var(--gunmetal);
+      display: flex;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      gap: 5px;
+      width: 240px;
+      height: 100px;
+      margin-top: 20px;
+
+      @media screen and (max-width: 650px) {
+        margin-top: 12px;
+      }
+    }
+
+    .description {
+      color: var(--auro-metal);
+      margin-top: 24px;
+      animation: from-below calc(2 * var(--duration)) forwards;
+      animation-delay: calc(10 * var(--duration));
+      opacity: 0;
+
+      @media screen and (max-width: 650px) {
+        margin-top: 16px;
+      }
+    }
+
+    .price {
+      margin-top: 30px;
+      position: relative;
+      width: 127px;
+      height: 32px;
+
+      .value {
+        color: var(--deep-aquamarine);
+        position: absolute;
+
+        &.before {
+          font-family: fren;
+          font-size: 32px;
+          line-height: 32px;
+          font-weight: 700;
+
+          animation: yasui calc(9 * var(--duration)) forwards;
+
+          &::after {
+            content: "";
+            background-color: var(--auro-metal);
+            display: block;
+            width: 110%;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scaleX(0);
+            animation: grow var(--duration) 10s forwards;
+            animation-delay: calc(10 * var(--duration));
+            transform-origin: center left;
+          }
+        }
+      }
+
+      @media screen and (max-width: 650px) {
+        margin-top: 24px;
+      }
+    }
+
+    .add-to-cart {
+      background-color: var(--deep-aquamarine);
+      color: white;
+      margin-top: 30px;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      border-radius: 8px;
+      border: none;
+      transition: background-color var(--duration);
+      animation: from-below var(--duration) forwards;
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--ultra-deep-aquamarine);
+
+          svg {
+            animation: shake calc(1.5 * var(--duration))
+              cubic-bezier(0.35, 0.05, 0.2, 1) both;
+          }
+        }
+      }
+
+      @media screen and (max-width: 650px) {
+        margin-top: 20px;
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      padding: 24px;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    width: 343px;
+  }
+}

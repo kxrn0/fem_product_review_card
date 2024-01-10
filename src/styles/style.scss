@@ -1,0 +1,220 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@supports (font-variation-settings: normal) {
+  @font-face {
+    font-family: fren;
+    src: url("../assets/fonts/fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf");
+    font-weight: 100 1000;
+  }
+
+  @font-face {
+    font-family: monster;
+    src: url("../assets/fonts/montserrat/Montserrat-VariableFont_wght.ttf");
+    font-weight: 100 1000;
+  }
+}
+
+@supports not (font-variation-settings: normal) {
+  @font-face {
+    font-family: fren;
+    src: url("../assets/fonts/fraunces/static/Fraunces_144pt-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: monster;
+    src: url("../assets/fonts/montserrat/static/Montserrat-Medium.ttf");
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: monster;
+    src: url("../assets/fonts/montserrat/static/Montserrat-Bold.ttf");
+    font-weight: 700;
+  }
+}
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-gray-blue: hsl(228, 12%, 48%);
+  --deep-aquamarine: hsl(158, 36%, 37%);
+  --ultra-deep-aquamarine: hsl(158, 42%, 18%);
+  --gunmetal: #1c232b;
+  --auro-metal: #6c7289;
+  --duration: 0.33s;
+}
+
+body {
+  background-color: var(--cream);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.fs-h1 {
+  font-family: fren;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.fs-body-1,
+.fs-body-2,
+.fs-body-3 {
+  font-family: monster;
+}
+
+.fs-body-1,
+.fs-body-2 {
+  font-weight: 500;
+}
+
+.fs-body-1 {
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.fs-body-2 {
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.fs-body-3 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  45% {
+    transform: rotate(8deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(4deg);
+  }
+  85% {
+    transform: rotate(-4deg);
+  }
+  92% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes yasui {
+  from {
+    top: 0;
+    left: 0;
+    font-size: 32px;
+    opacity: 0.25;
+  }
+
+  99% {
+    font-family: fren;
+  }
+
+  to {
+    color: var(--auro-metal);
+    opacity: 1;
+    top: 50%;
+    left: calc(100% + 19px);
+    transform: translateY(-50%);
+    font-size: 13px;
+    font-family: monster;
+    font-weight: 500;
+    line-height: 23px;
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: translate(-50%, -50%) scaleX(0);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+}
+
+@keyframes from-left {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate(-100%);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes from-below {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes from-above {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-bg-in {
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: white;
+  }
+}
